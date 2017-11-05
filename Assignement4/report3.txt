@@ -1,0 +1,42 @@
+time taken for N = 10000 using numpy is 0.000239 
+time taken for N = 10000 NOT using numpy is 0.002430 
+the difference of time2-time1 if 0.002191 
+using numpy arrays speeds up the integrator by 1016 percent 
+------------------------------------------------- 
+time taken for N = 1000000 using numpy is 0.013913 
+time taken for N = 1000000 NOT using numpy is 0.247192 
+the difference of time2-time1 if 0.233279 
+using numpy arrays speeds up the integrator by 1776 percent 
+------------------------------------------------- 
+cProfile integrate(): 
+Wed Oct  4 19:36:00 2017    integrate.prof
+
+         1000004 function calls in 0.396 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.309    0.309    0.396    0.396 /home/steffen/Dropbox/Main/inf4331/Assignement4/integrator.py:5(integrate)
+  1000000    0.086    0.000    0.086    0.000 numpy_integrator.py:22(<lambda>)
+        1    0.000    0.000    0.396    0.396 {built-in method builtins.exec}
+        1    0.000    0.000    0.396    0.396 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+------------------------------------------------- 
+cProfile numpy_integrate(): 
+Wed Oct  4 19:36:00 2017    numpy_integrate.prof
+
+         22 function calls in 0.012 seconds
+
+   Ordered by: internal time
+   List reduced from 19 to 5 due to restriction <5>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.005    0.005    0.008    0.008 /home/steffen/anaconda3/lib/python3.6/site-packages/numpy/core/function_base.py:25(linspace)
+        1    0.004    0.004    0.004    0.004 {built-in method numpy.core.multiarray.arange}
+        1    0.003    0.003    0.003    0.003 numpy_integrator.py:22(<lambda>)
+        1    0.001    0.001    0.001    0.001 {method 'reduce' of 'numpy.ufunc' objects}
+        1    0.000    0.000    0.012    0.012 <string>:1(<module>)
+
+

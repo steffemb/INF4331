@@ -1,0 +1,5 @@
+running scraper.py calls all_the_emails("https://lucidtech.io/", 2) and writes it findings to
+two files, emails.txt, and hyperlinks.txt
+
+scraper.py also contains extra functions not specified in the task for handling url to HTML like
+string and tidying up output etc

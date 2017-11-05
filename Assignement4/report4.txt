@@ -1,0 +1,22 @@
+TLDR: 
+ 
+ Numba makes the integration faster, but the added time taken to initialize the 
+ function samples makes it not worth it. 
+ 
+ numba is unable to handle functions that get a function passed. In that case 
+ numba only adds overhead 
+ 
+ numba + numpy arrays instead of lists speeds up integration if N is large. 
+   
+  
+------------------------------------------------- 
+ 
+time taken for N = 1000 using numba is 0.227453 
+time taken for N = 1000 NOT using numba is 0.000272 
+the difference of time2-time1 if -0.227181 
+using numba slowed down the integrator by 83511 percent 
+------------------------------------------------- 
+time taken for N = 10000000 using numba is 0.213158 
+time taken for N = 10000000 NOT using numba is 2.486555 
+the difference of time2-time1 is 2.273397 
+using numba speeds up the integrator by 1166 percent 

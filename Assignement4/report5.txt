@@ -1,0 +1,47 @@
+time taken for N = 10000 using cython is 0.000230 
+time taken for N = 10000 NOT using cython is 0.002534 
+the difference of time2-time1 if 0.002304 
+using cython speeds up the integrator by 1100 percent 
+------------------------------------------------- 
+time taken for N = 1000000 using cython is 0.013424 
+time taken for N = 1000000 NOT using cython is 0.246255 
+the difference of time2-time1 if 0.232832 
+using cython speeds up the integrator by 1834 percent 
+------------------------------------------------- 
+time taken for N = 10000000 using cython is 0.124049 
+time taken for N = 10000000 NOT using cython is 2.469359 
+the difference of time2-time1 if 2.345310 
+using cython speeds up the integrator by 1990 percent 
+------------------------------------------------- 
+cProfile integrate(): 
+Fri Oct  6 11:29:19 2017    integrate.prof
+
+         10000003 function calls in 3.753 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.889    2.889    3.752    3.752 /home/steffen/Dropbox/Main/inf4331/Assignement4/integrator.py:5(integrate)
+  9999999    0.863    0.000    0.863    0.000 cython_integrator.py:9(<lambda>)
+        1    0.000    0.000    3.753    3.753 {built-in method builtins.exec}
+        1    0.000    0.000    3.752    3.752 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+------------------------------------------------- 
+cProfile cython_integrate(): 
+Fri Oct  6 11:29:19 2017    cython_integrate.prof
+
+         21 function calls in 0.163 seconds
+
+   Ordered by: internal time
+   List reduced from 18 to 5 due to restriction <5>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.064    0.064    0.114    0.114 /home/steffen/anaconda3/lib/python3.6/site-packages/numpy/core/function_base.py:25(linspace)
+        1    0.050    0.050    0.050    0.050 {built-in method numpy.core.multiarray.arange}
+        1    0.038    0.038    0.038    0.038 cython_integrator.py:9(<lambda>)
+        1    0.010    0.010    0.010    0.010 {method 'reduce' of 'numpy.ufunc' objects}
+        1    0.001    0.001    0.163    0.163 {built-in method cython_integrator.cython_integrate}
+
+
